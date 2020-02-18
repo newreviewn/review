@@ -1,0 +1,54 @@
+<!DOCTYPE html >
+<html lang="en"   xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout" layout:decorate="~{share/index}"
+      xmlns:th="https://www.thymeleaf.org" xmlns:v-on="http://www.w3.org/1999/xhtml" >
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<!--引用主模板-->
+<div layout:fragment="content" id="reviewer">
+    <div class="page-sidebar navbar-collapse collapse">
+        <ul class="page-sidebar-menu " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+            <li class="sidebar-toggler-wrapper">
+                <br>
+            </li>
+
+            <li>
+                <a href="dailypage">
+                    <i class="icon-basket"></i>
+                    <span class="title">当日收到邮件</span>
+                    <span class="arrow"></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="nothandlepage">
+                    <i class="icon-basket"></i>
+                    <span class="title">未处理邮件</span>
+                    <span class="arrow "></span>
+                </a>
+            </li>
+
+            <li>
+                <a href="handlerpage">
+                    <i class="icon-basket"></i>
+                    <span class="title">已处理邮件</span>
+                    <span class="arrow "></span>
+                </a>
+            </li>
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+
+    <div class="page-content-wrapper">
+        <div class="page-content" style="min-height:873px">
+            <div layout:fragment="reviewerPage"></div>
+        </div>
+    </div>
+
+    <script src="assets/admin/pages/scripts/index.js" type="text/javascript"></script>
+</div>
+
+
+</body>
+</html>

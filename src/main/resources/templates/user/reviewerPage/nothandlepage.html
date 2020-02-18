@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.w3.org/1999/xhtml" layout:decorate="~{user/Reviewer}"
+      xmlns:th="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <!--审稿人未处理稿件-->
+</head>
+<body>
+<div layout:fragment="reviewerPage" >
+
+    <div id="daily">
+        <div class="container" style="width: 100%">
+            <div class="row">
+                <div class="col-md-12">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
+                    <div class="portlet light">
+                        <div class="portlet-title">
+                            <div class="caption">
+                                <i class="fa fa-cogs font-green-sharp"></i>
+                                <span class="caption-subject font-green-sharp bold uppercase">未处理稿件</span>
+                            </div>
+
+                        </div>
+                        <div class="portlet-body">
+
+                            <div class="dataTables_wrapper no-footer">
+                                <div>
+                                    <table class="table table-striped table-bordered table-hover dataTable no-footer"  role="grid" aria-describedby="sample_1_info">
+                                        <thead>
+                                        <tr role="row">
+
+                                            <th class="sorting_asc" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="
+									 论文名称
+								: activate to sort column ascending" style="width: 143.006px;">
+                                                稿件领域
+                                            </th>
+                                            <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="
+									 Email
+								" style="width: 90.0057px;">
+                                                稿件标题
+                                            </th>
+                                            <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="
+									 Points
+								" style="width: 90.0057px;">
+                                                稿件信息
+                                            </th>
+                                            <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="
+									 Status
+								" style="width: 90.0057px;">
+                                                稿件处理
+                                            </th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr class="gradeX odd" role="row">
+
+                                            <td class="sorting_1">
+                                                coop
+                                            </td>
+                                            <td>
+                                                {{artname[0]}}
+                                            </td>
+                                            <td>
+                                                <a href="javascript:;" class="btn btn-sm default" id="infor" style="width: 85px"  v-on:click="artinforclick()">
+                                                    稿件信息 <i class="fa fa-file-o"></i>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                <a href="javascript:;" class="btn btn-sm blue" style="width: 85px" id="watch" v-on:click="tempclick(artname[0])">
+                                                    处理信息 <i class="fa fa-user"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- END EXAMPLE TABLE PORTLET-->
+                </div>
+            </div>
+        </div>
+
+        <!--处理稿件模态框-->
+        <div id="dailypage" class="modal-body">
+            <div class="modal fade in"  role="basic" aria-hidden="true" style="display: block; padding-right: 15px;background: #888888CC">
+                <div class="modal-dialog">
+                    <div class="modal-content"><div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="error_daily"></button>
+                        <h4 class="modal-title">{{artTempName}}</h4>
+                    </div>
+                        <div class="modal-body">
+                            <div th:insert="user/reviewerPage/comment"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <input type="submit" name="submit" class="btnD" style="float:right;width: 80px;height: 35px;margin-top: 2px;" value="提交" />
+                            <input  type="button" class="btnD" data-dismiss="modal" id="close_daily" style="float:right;width: 80px;height: 35px;margin-top: 2px;" value="Close">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--稿件信息处理框-->
+        <div id="information" class="modal-body">
+            <div class="modal fade in" id="ajax" role="basic" aria-hidden="true" style="display: block; padding-right: 15px;background: #888888CC">
+                <div class="modal-dialog">
+                    <div class="modal-content"><div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" id="error_infor"></button>
+                        <h4 class="modal-title">稿件信息</h4>
+                    </div>
+                        <div class="modal-body">
+                            <div th:insert="user/model/artInformation"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <input  type="button" class="btn" data-dismiss="modal" id="close_infor" value="Close">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-wysihtml5/bootstrap-wysihtml5.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css"/>
+    <link rel="stylesheet" href="css/dailypage.css">
+
+    <script src="assets/admin/pages/scripts/form-validation.js"></script>
+    <script src="js/user/reviewerPage/nohandlerpage.js"></script>
+
+</div>
+</body>
+</html>

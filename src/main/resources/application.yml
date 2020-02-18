@@ -1,0 +1,9 @@
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    servlet:
+      content-type: text/html
+    mode: LEGACYHTML5
+    cache: false
+server:
+  port: 9999

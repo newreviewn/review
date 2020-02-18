@@ -1,0 +1,39 @@
+.btnD{
+    background-color:#6495ED;
+    border:1px solid #CDCDCD;
+    border-radius: 10px;
+    height:35px;
+    opacity:0.7;
+    width:150px;
+    cursor: pointer;
+
+}
+.file-box{
+    margin-top: 10px;
+    position:relative;
+    width:340px;
+    margin-left: 22%;
+}
+.file-box>form{
+    margin-top: 5px;
+}
+.txt{
+    height:22px;
+    border:1px solid #cdcdcd;
+    width:180px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.file{
+    position: relative;
+    top: 0;
+    right: 80px;
+    height: 30px;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    width: 340px;
+    cursor: pointer;
+    float: right;
+    margin-top: -30px;
+    margin-right: -80px;
+}
