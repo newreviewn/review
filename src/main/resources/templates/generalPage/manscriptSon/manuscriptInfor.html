@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="assets/global/plugins/select2/select2.css"/>
+    <link href="assets/global/plugins/dropzone/css/dropzone.css" rel="stylesheet"/>
+    <script src="assets/global/plugins/respond.min.js"></script>
+    <script src="assets/global/plugins/excanvas.min.js"></script>
+
+    <script type="text/javascript" src="assets/global/plugins/select2/select2.min.js"></script>
+    <script src="assets/admin/pages/scripts/form-wizard.js"></script>
+
+    <script type="text/javascript" src="assets/global/plugins/jquery-validation/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="assets/global/plugins/jquery-validation/js/additional-methods.min.js"></script>
+    <script type="text/javascript" src="assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js"></script>
+
+    <script src="assets/admin/pages/scripts/form-dropzone.js"></script>
+    <script src="assets/global/plugins/dropzone/dropzone.js"></script>
+</head>
+<body>
+<!--注册-->
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light" id="form_wizard_1">
+            <div class="portlet-title">
+                <div class="caption">
+								<span class="caption-subject font-green-sharp bold uppercase">
+								<i class="fa fa-gift"></i> Form Wizard - <span class="step-title">Step 2 of 4</span>
+								</span>
+                </div>
+                <div class="tools">
+                    <a href="javascript:;" class="collapse" data-original-title="" title="">
+                    </a>
+                    <a href="#portlet-config" data-toggle="modal" class="config" data-original-title="" title="">
+                    </a>
+                    <a href="javascript:;" class="reload" data-original-title="" title="">
+                    </a>
+                    <a href="javascript:;" class="remove" data-original-title="" title="">
+                    </a>
+                </div>
+            </div>
+            <div class="portlet-body form">
+                <form action="javascript:;" class="form-horizontal" id="submit_form" method="POST" novalidate="novalidate">
+                    <div class="form-wizard">
+                        <div class="form-body">
+                            <ul class="nav nav-pills nav-justified steps">
+                                <li class="active">
+                                    <a href="#tab2" data-toggle="tab" class="step" aria-expanded="true">
+												<span class="number">
+												1 </span>
+                                        <span class="desc">
+												<i class="fa fa-check"></i>稿件及作者信息 </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab3" data-toggle="tab" class="step active">
+												<span class="number">
+												2 </span>
+                                        <span class="desc">
+												<i class="fa fa-check"></i>稿件详细信息 </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#tab4" data-toggle="tab" class="step active">
+												<span class="number">
+												3 </span>
+                                        <span class="desc">
+												<i class="fa fa-check"></i> 总览 </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div id="bar" class="progress progress-striped" role="progressbar">
+                                <div class="progress-bar progress-bar-success" style="width: 50%;">
+                                </div>
+                            </div>
+                            <div class="tab-content">
+
+                                <div class="alert alert-success display-none" style="display: none;">
+                                    <button class="close" data-dismiss="alert"></button>
+                                    Your form validation is successful!
+                                </div>
+                                <!--稿件文件及作者-->
+                                <div class="tab-pane active" id="tab2">
+                                    <h3 class="block">上传稿件及附录等信息</h3>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">第一作者 <span class="required" aria-required="true">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="fullname">
+                                            <span class="help-block">
+														请输入第一作者姓名 </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">手机号码 <span class="required" aria-required="true">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="phone">
+                                            <span class="help-block">
+														请输入您的手机号码 </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">其他</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" rows="3" name="remarks"></textarea>
+                                        </div>
+                                    </div>
+                                    <!--文本上传框-->
+                                    <div class="portlet light">
+                                        <div class="portlet-body">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p>
+								<span class="label label-danger">
+								NOTE: </span>
+                                                        &nbsp; This plugins works only on Latest Chrome, Firefox, Safari, Opera &amp; Internet Explorer 10.
+                                                    </p>
+                                                    <form action="assets/global/plugins/dropzone/upload.php" class="dropzone dz-clickable" id="my-dropzone">
+                                                        <div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--稿件详细信息-->
+                                <div class="tab-pane" id="tab3">
+                                    <h3 class="block">Provide your billing and credit card details</h3>
+                                    <!--文章标题-->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">文章标题 <span class="required">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="topic"/>
+                                            <span class="help-block">
+														</span>
+                                        </div>
+                                    </div>
+                                    <!--文章关键字-->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">文章关键字 <span class="required">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" name="keywords"/>
+                                            <span class="help-block">
+														</span>
+                                        </div>
+                                    </div>
+                                    <!--是否代理-->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">是否代理 <span class="required" aria-required="true">
+													* </span>
+                                        </label>
+                                        <div class="col-md-4">
+                                            <div class="radio-list">
+                                                <label>
+                                                    <div class="radio"><span class=""><input type="radio" name="gender" value="M" data-title="Male"></span></div>
+                                                    是 </label>
+                                                <label>
+                                                    <div class="radio"><span class="checked"><input type="radio" name="gender" value="F" data-title="Female"></span></div>
+                                                    否 </label>
+                                            </div>
+                                            <div id="form_gender_error">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--文章摘要-->
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">摘要</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" rows="3" name="abtract"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--稿件信息统计-->
+                                <div class="tab-pane" id="tab4">
+                                    <h3 class="block">Confirm your account</h3>
+                                    <h4 class="form-section">稿件作者信息</h4>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">第一作者:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="fullname">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">手机号:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="phone">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <h4 class="form-section">稿件详细信息</h4>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">文章标题:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="topic">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">文章关键字:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="keywords">
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3">摘要:</label>
+                                        <div class="col-md-4">
+                                            <p class="form-control-static" data-display="abtract">
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <a href="javascript:;" class="btn default button-previous" style="display: inline-block;">
+                                        <i class="m-icon-swapleft"></i> Back </a>
+                                    <a href="javascript:;" class="btn blue button-next">
+                                        Continue <i class="m-icon-swapright m-icon-white"></i>
+                                    </a>
+                                    <a href="javascript:;" class="btn green button-submit" style="display: none;">
+                                        Submit <i class="m-icon-swapright m-icon-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(document).ready(function() {
+        FormWizard.init();
+    });
+</script>
+</body>
+</html>
